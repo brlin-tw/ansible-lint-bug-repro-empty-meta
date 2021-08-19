@@ -46,35 +46,33 @@ Python 3.9.5
 
 
 ##### STEPS TO REPRODUCE
-<!--- Describe exactly how to reproduce the problem, using a minimal test-case -->
 
-<!--- Paste example playbooks or commands between triple backticks below -->
-```console (paste below)
-
+```commands
+git clone https://github.com/Lin-Buo-Ren/ansible-lint-bug-repro-empty-meta.git
+cd ansible-lint-bug-repro-empty-meta
+ansible-lint
 ```
 
-<!--- HINT: You can paste gist.github.com links for larger files -->
-
 ##### Desired Behaviour
-<!--- Describe what you expected to happen when running the steps above -->
 
-Possible security bugs should be reported via email to `security@ansible.com`
+Program not crashed, possibly giving linting errors regarding the improper meta file
 
 ##### Actual Behaviour
-<!--- Describe what actually happened. If possible run with extra verbosity (-vvvv) -->
-
-Please give some details of what is actually happening.
-Include a [minimum complete verifiable example] with:
-- playbook
-- output of running ansible-lint
-- if you're getting a stack trace, output of
-  `ansible-playbook --syntax-check playbook`
-
 
 <!--- Paste verbatim command output between triple backticks -->
 ```paste below
+$ ansible-lint
+Traceback (most recent call last):
+  File "/home/brlin/.local/bin/ansible-lint", line 8, in <module>
+    sys.exit(_run_cli_entrypoint())
+  File "/home/brlin/.local/pipx/venvs/ansible-lint/lib/python3.9/site-packages/ansiblelint/__main__.py", line 299, in _run_cli_entrypoint
+    sys.exit(main(sys.argv))
+  File "/home/brlin/.local/pipx/venvs/ansible-lint/lib/python3.9/site-packages/ansiblelint/__main__.py", line 206, in main
+    prepare_environment()
+  File "/home/brlin/.local/pipx/venvs/ansible-lint/lib/python3.9/site-packages/ansiblelint/prerun.py", line 211, in prepare_environment
+    _install_galaxy_role()
+  File "/home/brlin/.local/pipx/venvs/ansible-lint/lib/python3.9/site-packages/ansiblelint/prerun.py", line 253, in _install_galaxy_role
+    if 'galaxy_info' not in yaml:
+TypeError: argument of type 'NoneType' is not iterable
 
 ```
-
-
-[minimum complete verifiable example]: http://stackoverflow.com/help/mcve
