@@ -1,4 +1,4 @@
-# Empty meta yaml triggeres "TypeError: argument of type 'NoneType' is not iterable"
+# Empty meta yaml triggers "TypeError: argument of type 'NoneType' is not iterable"
 
 > Verify first that your issue is not already reported on GitHub
 
