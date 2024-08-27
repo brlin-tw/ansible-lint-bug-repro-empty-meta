@@ -1,5 +1,7 @@
 # Empty meta yaml triggers "TypeError: argument of type 'NoneType' is not iterable"
 
+[Empty meta yaml triggers &quot;TypeError: argument of type 'NoneType' is not iterable&quot; · Issue #1703 · ansible/ansible-lint](https://github.com/ansible/ansible-lint/issues/1703)
+
 > Verify first that your issue is not already reported on GitHub
 
 Similar to #1021 but the error message is iterable instead of subscriptable
